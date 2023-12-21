@@ -57,4 +57,63 @@ function showFamily(family) { // создаем функцию
   const family1 = []
   console.log(showFamily(family1))
 
-  
+  // Задание 6
+const restorantData = {
+  menu: [
+    {
+      name: 'Salad Caesar',
+      price: '14$',
+    },
+    {
+      name: 'Pizza Diavola',
+      price: '9$',
+    },
+    {
+      name: 'Beefsteak',
+      price: '17$',
+    },
+    {
+      name: 'Napoleon',
+      price: '7$',
+    },
+  ],
+  waitors: [
+    { name: 'Alice', age: 22 },
+    { name: 'John', age: 24 },
+  ],
+  averageLunchPrice: '20$',
+  openNow: true,
+}
+
+function isOpen(prop) { 
+  let answer = '' 
+  prop ? (answer = 'Открыто') : (answer = 'Закрыто') // неправильная работа тернарного оператора: первое условие должно возвращается, когда prop = true, т.е должно быть "Открыто"
+
+  return answer // ошибкас в написании anwser
+}
+console.log(isOpen(openNow))
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+  if ((parseFloat(fDish.price) + parseFloat(sDish.price)) / 2 < average) { // неправильное сравнение цен. можно преобразовать цены блюд в числа(parseFloat), а потом вычислить их среднюю стоимость и сравнить со средней ценой
+    return 'Цена ниже средней'
+  } else {
+    return 'Цена выше средней'
+  }
+}
+
+console.log(
+  isAverageLunchPriceTrue(
+    restorantData.menu[0],
+    restorantData.menu[1],
+    restorantData.averageLunchPrice
+  )
+)
+
+function transferWaitors(data) {
+  const copy = Object.assign({}, data)
+
+  copy.waitors[0] = { name: 'Mike', age: 32 }
+  return copy
+}
+
+transferWaitors(restorantData)
