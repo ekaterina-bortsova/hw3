@@ -23,7 +23,7 @@ function getCoupeNumber(seat) { // создаем функцию
   console.log(getCoupeNumber(13)) // выводим в консоль номер купе при вводе места
   
 // 3)
-  let mas = [5, 10, 'Shopping', 20, 'Homework'] // создаем массив
+  const mas = [5, 10, 'Shopping', 20, 'Homework'] // создаем массив
   for(let i = 0; i < mas.length; i++) {  // перебираем каждый элемент массива
   if (typeof mas[i] === 'number') { // если элемен массива число
     mas[i] *= 2; // увеличиваем его в 2 раза
@@ -34,8 +34,8 @@ function getCoupeNumber(seat) { // создаем функцию
 console.log(mas) // выводим в консоль получившийся массив
 
 // 4)
-let data = [5, 10, 'Shopping', 20, 'Homework'] 
-let result = []
+const data = [5, 10, 'Shopping', 20, 'Homework'] 
+const result = []
 
 for (let i = data.length - 1; i >= 0; i--) { // цикл перебирает каждый элемент массива data с конца 
   result.push(data[i]) // добавляет новый элемент в конец массива
@@ -44,13 +44,17 @@ console.log(result) // выводит в консоль массив result
 
 // 5)
 function showFamily(family) { // создаем функцию 
-    if (family.length === 0) { // проверяем есть ли в массиве элементы
-      return 'Семья пуста' // если нет - выводим сообщение
-    } else {
-      const names = family.join(' ')
-      return `Семья состоит из: ${names}`
+    if (family.length === 0) { // проверяем равны ли нулю элементы массива
+      return 'Семья пуста' // если да - выводим сообщение
+    } else { // если в массиве есть элементы
+      const names = family.join(' ') // объединяем все элементы массива в одну строку
+      return `Семья состоит из: ${names}`// возвращаем сообщение с подставленными именами
     }
   }
   const family = ['Peter', 'Ann', 'Alex', 'Linda']
   console.log(showFamily(family))
+
+  const family1 = []
+  console.log(showFamily(family1))
+
   
